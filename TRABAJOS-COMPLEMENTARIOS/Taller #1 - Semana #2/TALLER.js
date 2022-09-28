@@ -1,3 +1,4 @@
+//Determinamos las entidades respectivas con sus atributos
 const Alumno=[
     {
         id:1,
@@ -107,6 +108,7 @@ const Nota=[
         Estado: "Regular"
     },
 ]
+// Sentencia repetitiva del arreglo
 
 for(const iterator of Nota) {
     auxAlum= Alumno.find(elum=> elum.id===iterator.idAlumno)
