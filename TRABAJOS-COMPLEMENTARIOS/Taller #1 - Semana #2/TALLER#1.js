@@ -114,6 +114,13 @@ for(const iterator of Nota) {
     auxAlum= Alumno.find(elum=> elum.id===iterator.idAlumno)
     auxAsig= Asignatura.find(asig=> asig.id===iterator.idAsignatura)
     console.log(`\n*** INGRESO DE NOTAS  ***:
-    \tNombre: ${auxAlum.Nombre} Identificacion:${auxAlum.Indentificacion}
-    \tAsigantura: ${auxAsig.Descripcion} - Observacion: ${iterator.Observacion}`);
+    \tNombre: ${auxAlum.Nombre} 
+    \tIdentificacion:${auxAlum.Indentificacion}
+    \tAsigantura: ${auxAsig.Descripcion} 
+    \tCreditos: ${auxAsig.Creditos}
+    \tNivel: ${auxAsig.Nivel}
+    \tNota: ${iterator.Nota}
+    \tEstado: ${iterator.Estado}
+    \tObeservacion: ${iterator.Observacion}
+    \tParcial: ${iterator.Parcial}`);
 }
