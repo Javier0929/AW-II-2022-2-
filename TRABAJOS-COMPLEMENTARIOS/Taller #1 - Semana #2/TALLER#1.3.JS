@@ -113,11 +113,13 @@ const Nota=[
 
 const Notas = (...datos) =>console.log('*** INGRESO DE NOTAS  ***',[...datos])
 
-Notas('NOTAS',Nota.find(Nota=> Nota.Observacion, Nota=> Nota.Parcial),
+Notas('NOTAS',Nota.find(Notas=> Notas.Observacion),
 
 'ALUMNO', Alumno.find(Alumno=> Alumno.Nombre), 
 
 'ASIGNATURA', Asignatura.find(Asignatura=> Asignatura.Creditos))
+
+
 
 
 
