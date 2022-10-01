@@ -112,6 +112,7 @@ const Nota=[
 // UNA 3ER MANERA DE HACER EL EJEMOLO Y RECORRER LOS ARREGLOS ES LA SIGUIENTE
 
 const Notas = (...datos) =>console.log('*** INGRESO DE NOTAS  ***',[...datos])
+
 Notas('NOTAS',Nota.find(Nota=> Nota.Observacion, Nota=> Nota.Parcial),
 
 'ALUMNO', Alumno.find(Alumno=> Alumno.Nombre), 
