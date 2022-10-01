@@ -110,7 +110,7 @@ const Nota=[
 ]
 // Sentencia repetitiva del arreglo usando ForEach
 
-Alumno.forEach((dato) => {
+    Alumno.forEach((dato) => {
     New=Nota.find(identificador=>identificador.id ==dato.id);
     SaveAsignatura=Asignatura.find(identificador=>identificador.id ==New.id);
     console.log(`\t***INGRESO DE NOTAS  ***
