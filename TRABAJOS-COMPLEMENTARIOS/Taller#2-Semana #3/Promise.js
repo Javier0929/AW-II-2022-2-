@@ -46,7 +46,7 @@ function buscarNotaId(id){
     })
 }
 
-//Realizamos la busquedas de los arreglos definidos. cons sus respectivas entidades  
+//Realizamos la busquedas y mostramos los arreglos definidos con sus respectivas propiedades 
 let aux = {}
 buscarNotaId(1).then((note) => {
     aux = note
