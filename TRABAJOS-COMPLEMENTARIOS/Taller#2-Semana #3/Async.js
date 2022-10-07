@@ -41,7 +41,7 @@ async function buscarNotaId(id){
     return nota
 }
 
-//Realizamos la busquedas de los arreglos definidos. cons sus respectivas entidades  
+//Realizamos la busquedas y mostramos los arreglos definidos con sus respectivas propiedades  
 async function main (){
     try{
         const resultStudent =  await buscarALumnoId(1)
