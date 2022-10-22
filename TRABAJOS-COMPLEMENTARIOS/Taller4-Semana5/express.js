@@ -22,16 +22,16 @@ server.get('/Nota', (req,res)=>{
     res.status(200).sendFile(urlNota);
     
 })
-server.get('/test',(req,res)=>{
-    res.status(200).json({
-        'message':'Problema encontrado..!!'
-    })
-})
-server.use((req,res, next)=>{
-    res.status(400).sendFile(urlNota);
+
+server.get('/Alumno', (req,res)=>{
+    res.status(200).sendFile(urlAlumno);
+    
 })
 
-
+server.get('/Asignatura', (req,res)=>{
+    res.status(200).sendFile(urlAsignatura);
+    
+})
 function functionAlumno (req, res){
     res.status(200).sendFile(urlAlumno);
 }
