@@ -1,10 +1,10 @@
 {
-  "name": "taller4-semana5",
+  "name": "taller5-semana6",
   "version": "1.0.0",
-  "main": "express.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node express.js",
-    "dev": "nodemon express.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  },
-  "description": ""
+  }
 }
