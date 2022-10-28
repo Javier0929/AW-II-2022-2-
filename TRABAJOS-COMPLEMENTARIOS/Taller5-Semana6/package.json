@@ -2,7 +2,7 @@
   "name": "taller5-semana6",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Rest.js",
   "scripts": {
     "start": "node Rest.js",
     "dev": "nodemon Rest.js"
