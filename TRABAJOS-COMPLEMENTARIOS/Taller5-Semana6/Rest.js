@@ -11,55 +11,58 @@ app.use(cors()).use(express.json())
 
 app.use('/public', express.static(__dirname+'/public') )
 
-let alumno = [];
+let nota = [];
 
 //Get
 
-app.get('/api/v1', (req,res)=>{
+app.get('/', (req,res)=>{
     res.status(200).send(
-        alumno
+        nota
     )
 })
 
 //Creacion del Post
-app.post('/api/v1', (req,res)=>{
+app.post('/', (req,res)=>{
     const {body} =  req;
-    alumno.push(body);
+    nota.push(body);
     res.status(200).send
     ({
 
-    msg:"Dato insertado correctamente",
+    msg:"Nota insertada correctamente",
         resp: body
     })
 })
 
 //Creacion del Get
 
-app.get('/api/v1/:identificacion', (req,res)=>{
+app.get('/:identificacion', (req,res)=>{
     const {identificacion} = req.params;
-    let result = alumno.filter(p=>p.identificacion === identificacion);
+    let result = nota.filter(p=>p.identificacion === identificacion);
     if (result.length > 0){
         res.status(200).send(result[0]);
 
     }
     
     res.status(404).send({ 
-        msg:"No se puede encontrar el elemento con esa identificacion",
+        msg:"No se puede encontrar la nota",
     })
 })
 
 //Creacion del Put
 
-app.put('/api/v1', (req,res)=>{
-    const {identificacion, nombre, curso} = req.body;
-    let alumno =  alumno.filter(p=> p.identificacion === identificacion)[0]
-    alumno.nombre = nombre;
-    alumno.curso = curso;
+app.put('/', (req,res)=>{
+    const {identification, calificacion, parcial, observacion, estado } = req.body;
+    let nota =  nota.filter(p=> p.identification === identification)[0]
+    
+    nota.parcial = parcial;
+    nota.observacion = observacion;
+    nota.estado = estado; 
+    nota.calificacion = calificacion;
 
     res.status(200).send(
         {
-            msg:"Dato modificado correctamente",
-            response: alumno
+            msg:"Nota modificada correctamente",
+            response: nota
         }
     )
 
@@ -67,11 +70,11 @@ app.put('/api/v1', (req,res)=>{
 
 //Creacion del Delete
 
-app.delete('/api/v1/:identificacion', (req,res)=>{
+app.delete('/:identificacion', (req,res)=>{
     const {identificacion} =  req.params;
-    alumno = alumno.filter(p => p.identificacion !== identificacion);
+    nota = nota.filter(p => p.identificacion !== identificacion);
     res.status(200).send({
-        msg:"Se eliminó el alumno con éxito!"
+        msg:"Se eliminó la nota con éxito!"
     })
 })
 
