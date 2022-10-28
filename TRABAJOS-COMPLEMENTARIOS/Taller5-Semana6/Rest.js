@@ -4,7 +4,7 @@ const cors = require("cors");
 const express  = require("express");
 
 const app =  express();
-const PUERTO =  3001;
+const PUERTO =  5000;
 
 
 app.use(cors()).use(express.json())
