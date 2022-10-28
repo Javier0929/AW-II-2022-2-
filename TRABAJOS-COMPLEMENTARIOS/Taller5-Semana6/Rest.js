@@ -1,3 +1,4 @@
+//Creamos el puerto
 
 const cors = require("cors");
 const express  = require("express");
@@ -7,58 +8,76 @@ const PUERTO =  3001;
 
 
 app.use(cors()).use(express.json())
+
 //app.use('/public', express.static(__dirname+'/public') )
 
-let students = [];
+let alumno = [];
 
+//Get
 
 app.get('/api/v1', (req,res)=>{
     res.status(200).send(
-        students
+        alumno
     )
 })
+
+//Creacion del Post
 app.post('/api/v1', (req,res)=>{
     const {body} =  req;
-    students.push(body);({
+    alumno.push(body);
+    res.status(200).send
+    ({
+
     msg:"Dato insertado correctamente",
         resp: body
     })
 })
 
+//Creacion del Get
+
 app.get('/api/v1/:identificacion', (req,res)=>{
     const {identificacion} = req.params;
-    let result = students.filter(p=>p.identificacion === identificacion);
+    let result = alumno.filter(p=>p.identificacion === identificacion);
     if (result.length > 0){
         res.status(200).send(result[0]);
 
     }
     
     res.status(404).send({
-        msg:"No se puede encontrar el dato de identificacion",
+        msg:"No se puede encontrar el elemento con esa identificacion",
     })
 })
-app.put('/', (req,res)=>{
-    const {identification, name, course} = req.body;
-    let student =  students.filter(p=> p.identification === identification)[0] || {}
-    student.name = name;
-    student.course = course;
+
+//Creacion del Put
+
+app.put('/api/v1', (req,res)=>{
+    const {identificacion, nombre, curso} = req.body;
+    let alumno =  alumno.filter(p=> p.identificacion === identificacion)[0]
+    alumno.nombre = nombre;
+    alumno.curso = curso;
 
     res.status(200).send(
         {
-            message:"dato modificado correctamente",
-            response: student
+            msg:"Dato modificado correctamente",
+            response: alumno
         }
     )
 
 })
-app.delete('/:identification', (req,res)=>{
-    const {identification} =  req.params;
-    students = students.filter(p => p.identification !== identification);
+
+//Creacion del Delete
+
+app.delete('/api/v1/:identificacion', (req,res)=>{
+    const {identificacion} =  req.params;
+    alumno = alumno.filter(p => p.identificacion !== identificacion);
     res.status(200).send({
-        response:"Se eliminó el estudiante con éxito!"
+        msg:"Se eliminó el alumno con éxito!"
     })
 })
+
+//Salida del puerto
+
 app.listen(PUERTO, ()=>{
-    console.log(`Servidor corriendo, acceda a http://localhost:${PUERTO}`)
+    console.log(`Servidor corriendo correctamente, acceda a http://localhost:${PUERTO}`)
 })
 
