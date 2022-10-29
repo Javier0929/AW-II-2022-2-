@@ -51,13 +51,13 @@ app.get('/:identificacion', (req,res)=>{
 //Creacion del Put
 
 app.put('/', (req,res)=>{
-    const {identification, calificacion, parcial, observacion, estado } = req.body;
-    let nota =  nota.filter(p=> p.identification === identification)[0]
+    const {identificacion, parcial, observacion, estado, calificacion} = req.body;
+    let notas =  nota.filter(p=> p.identificacion === identificacion)[0]
     
-    nota.parcial = parcial;
-    nota.observacion = observacion;
-    nota.estado = estado; 
-    nota.calificacion = calificacion;
+    notas.parcial = parcial;
+    notas.observacion = observacion;
+    notas.estado = estado; 
+    notas.calificacion = calificacion;
 
     res.status(200).send(
         {
